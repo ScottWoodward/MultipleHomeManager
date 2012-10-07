@@ -22,8 +22,8 @@ public class MultipleHomeManager extends JavaPlugin{
 	private double setHomeCost;
 	private double homeCost;
 	private Queue<String> pending;
-	
-	
+
+
 	@Override
 	public void onEnable(){
 		pending = new LinkedList<String>();
@@ -39,9 +39,11 @@ public class MultipleHomeManager extends JavaPlugin{
 		getCommand("sethome").setExecutor(handler);
 		getCommand("listhome").setExecutor(handler);
 		useEcon = this.getConfig().getBoolean("EconomyEnabled");
-		if(!setupEconomy() && useEcon){
-			this.getLogger().warning("Vault missing, economy functions disabled");
-			useEcon = false;
+		if(useEcon){
+			if(!setupEconomy()){
+				this.getLogger().warning("Vault missing, economy functions disabled");
+				useEcon = false;
+			}
 		}
 		if(useEcon){
 			setHomeCharge = this.getConfig().getBoolean("SetHomeCharge");
@@ -49,51 +51,51 @@ public class MultipleHomeManager extends JavaPlugin{
 			setHomeCost = this.getConfig().getDouble("SetHomeCost");
 			homeCost = this.getConfig().getDouble("HomeCost");
 		}
-		//TODO Implament getCommand("listhome").setExecutor(handler);
+		//TODO Implement getCommand("listhome").setExecutor(handler);
 	}
-	
+
 	@Override
 	public void onDisable(){
 		dbHandler.sqlClose();
 		dbHandler = null;
 	}
-	
+
 	public DBHandler getDBHandler(){
 		return this.dbHandler;		
 	}
-	
+
 	public EconHandler getEconHandler(){
 		return this.econHandler;		
 	}
-	
+
 	public int getDelay(){
 		return delay;
 	}
-	
+
 	public int getTelePerTier(){
 		return telePerTier;
 	}
-	
+
 	public boolean getUseEcon(){
 		return useEcon;
 	}
-	
+
 	private boolean setupEconomy() {
-        if (getServer().getPluginManager().getPlugin("Vault") == null) {
-            return false;
-        }
-        RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
-        if (rsp == null) {
-            return false;
-        }
-        econ = rsp.getProvider();
-        return econ != null;
-    }
-	
+		if (getServer().getPluginManager().getPlugin("Vault") == null) {
+			return false;
+		}
+		RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
+		if (rsp == null) {
+			return false;
+		}
+		econ = rsp.getProvider();
+		return econ != null;
+	}
+
 	public boolean getSetHomeCharge(){
 		return setHomeCharge;
 	}
-	
+
 	public boolean getHomeCharge(){
 		return homeCharge;
 	}
@@ -101,13 +103,13 @@ public class MultipleHomeManager extends JavaPlugin{
 	public double getSetHomeCost(){
 		return setHomeCost;
 	}
-	
+
 	public double getHomeCost(){
 		return homeCost;
 	}
-	
+
 	public Queue<String> getPending(){
 		return pending;
 	}
-	
+
 }

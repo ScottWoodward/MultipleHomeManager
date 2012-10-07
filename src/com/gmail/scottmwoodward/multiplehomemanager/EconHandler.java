@@ -11,7 +11,7 @@ public class EconHandler {
 	}
 	
 	public boolean checkBalance(Player player, double cost){
-		if(plugin.econ.getBalance(player.getDisplayName())>cost){
+		if(plugin.econ.getBalance(player.getDisplayName())>=cost){
 			return true;
 		}
 		return false;
