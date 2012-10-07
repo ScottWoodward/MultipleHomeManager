@@ -1,0 +1,5 @@
+Version 1.01
+------------
+ - Altered onEnable() to only display Vault dependency missing warning if economy funcitons are enabled
+ - Fixed ClassNotFound Exception if attempting to use /home economy functions without Vault installed (even if disabled)
+ - Fixed bug where players were receiving a 'Not enough funds' error if they had exactly enough money.
