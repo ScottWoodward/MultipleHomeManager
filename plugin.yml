@@ -1,5 +1,5 @@
-name: Multiple Home Management
-main: com.gmail.scottmwoodward.multiplehomemanagement.MultipleHomeManagement
+name: Multiple Home Manager
+main: com.gmail.scottmwoodward.multiplehomemanager.MultipleHomeManager
 version: 1.00
 
 commands:
