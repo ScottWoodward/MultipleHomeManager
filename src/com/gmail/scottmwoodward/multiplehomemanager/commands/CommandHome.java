@@ -1,7 +1,11 @@
-package com.gmail.scottmwoodward.multiplehomemanager;
+package com.gmail.scottmwoodward.multiplehomemanager.commands;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import com.gmail.scottmwoodward.multiplehomemanager.HelperArgumentChecker;
+import com.gmail.scottmwoodward.multiplehomemanager.HelperTeleport;
+import com.gmail.scottmwoodward.multiplehomemanager.MultipleHomeManager;
 
 public class CommandHome {
 
@@ -24,10 +28,10 @@ public class CommandHome {
 				return true;
 			}
 			perm = getPerm(homeNumber);
-			if(player.hasPermission(perm)&&player.hasPermission("multihomes.home")){
+			if(player.hasPermission(perm)&&player.hasPermission("mhm.command.home")){
 				if(plugin.getHomeCharge()){
 					if(plugin.getUseEcon()){
-						if(!plugin.getEconHandler().checkBalance(player, plugin.getHomeCost())){
+						if(!plugin.getEconHandler().hasEnoughMoney(player, plugin.getHomeCost())){
 							player.sendMessage("You do not have enough money to teleport to a home");
 							return true;
 						}
@@ -56,6 +60,6 @@ public class CommandHome {
 	
 	private String getPerm(int homeNumber){
 		double tier = (double)homeNumber/(double)plugin.getTelePerTier();
-		return "multihomes.sethome.tier"+String.valueOf((int)Math.ceil(tier));
+		return "mhm.command.sethome.tier"+String.valueOf((int)Math.ceil(tier));
 	}
 }

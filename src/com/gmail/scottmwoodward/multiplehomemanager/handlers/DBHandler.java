@@ -1,6 +1,9 @@
-package com.gmail.scottmwoodward.multiplehomemanager;
+package com.gmail.scottmwoodward.multiplehomemanager.handlers;
 
 import java.sql.ResultSet;
+
+import com.gmail.scottmwoodward.multiplehomemanager.MultipleHomeManager;
+
 import lib.PatPeter.SQLibrary.SQLite;
 
 public class DBHandler {

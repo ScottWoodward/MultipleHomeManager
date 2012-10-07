@@ -4,6 +4,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
+import com.gmail.scottmwoodward.multiplehomemanager.commands.CommandHome;
+import com.gmail.scottmwoodward.multiplehomemanager.commands.CommandListHome;
+import com.gmail.scottmwoodward.multiplehomemanager.commands.CommandSetHome;
+
 public class CommandHandler implements CommandExecutor{
 	private CommandHome homecommand;
 	private CommandSetHome sethomecommand;

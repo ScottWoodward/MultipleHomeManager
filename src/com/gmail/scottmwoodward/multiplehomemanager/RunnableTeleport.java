@@ -26,7 +26,7 @@ public class RunnableTeleport implements Runnable{
 
 	public void run(){
 		if(plugin.getUseEcon()&&plugin.getHomeCharge()){
-			if(!plugin.getEconHandler().checkBalance(player, plugin.getHomeCost())){
+			if(!plugin.getEconHandler().hasEnoughMoney(player, plugin.getHomeCost())){
 				plugin.getPending().remove(player.getDisplayName());
 				player.sendMessage("You do not have enough money to teleport to a home");
 				return;

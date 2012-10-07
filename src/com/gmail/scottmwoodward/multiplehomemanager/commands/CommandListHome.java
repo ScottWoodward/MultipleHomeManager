@@ -1,13 +1,15 @@
-package com.gmail.scottmwoodward.multiplehomemanagement;
+package com.gmail.scottmwoodward.multiplehomemanager.commands;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import com.gmail.scottmwoodward.multiplehomemanager.MultipleHomeManager;
+
 public class CommandListHome {
 
-	private MultipleHomeManagement plugin;
+	private MultipleHomeManager plugin;
 	
-	public CommandListHome(MultipleHomeManagement plugin){
+	public CommandListHome(MultipleHomeManager plugin){
 		this.plugin = plugin;
 	}
 	

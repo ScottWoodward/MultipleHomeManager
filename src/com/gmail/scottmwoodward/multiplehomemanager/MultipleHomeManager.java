@@ -9,6 +9,9 @@ import net.milkbowl.vault.economy.Economy;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.gmail.scottmwoodward.multiplehomemanager.handlers.DBHandler;
+import com.gmail.scottmwoodward.multiplehomemanager.handlers.EconHandler;
+
 public class MultipleHomeManager extends JavaPlugin{
 	private CommandHandler handler;
 	private DBHandler dbHandler;

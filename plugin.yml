@@ -6,7 +6,7 @@ commands:
    home:
       description: Teleports to the designated home.
       usage: /home <Home Number>
-      permission: multihomes.home
+      permission: mhm.command.home
       permission-message: You do not have permission to use /home
    sethome:
       description: Sets the location of the designated home.
@@ -15,5 +15,5 @@ commands:
    listhome:
       description: Lists the available home teleports.
       usage: /listhome
-      permission: multihomes.listhome
+      permission: mhm.command.listhome
       permission-message: You do not have permission to use /listhome

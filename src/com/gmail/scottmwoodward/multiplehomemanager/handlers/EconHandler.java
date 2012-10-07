@@ -1,6 +1,8 @@
-package com.gmail.scottmwoodward.multiplehomemanager;
+package com.gmail.scottmwoodward.multiplehomemanager.handlers;
 
 import org.bukkit.entity.Player;
+
+import com.gmail.scottmwoodward.multiplehomemanager.MultipleHomeManager;
 
 public class EconHandler {
 	
@@ -10,7 +12,7 @@ public class EconHandler {
 		this.plugin = plugin;
 	}
 	
-	public boolean checkBalance(Player player, double cost){
+	public boolean hasEnoughMoney(Player player, double cost){
 		if(plugin.econ.getBalance(player.getDisplayName())>=cost){
 			return true;
 		}
