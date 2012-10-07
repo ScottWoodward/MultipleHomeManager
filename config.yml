@@ -1,0 +1,13 @@
+# MultiHomes Configurations #
+# Number of Home Teleports available to each user tier #
+HomesPerTier: 1
+# Delay, in full seconds, that a user must stand still before teleporting #
+TeleportDelay: 3
+# Whether or not to use build in Economy functions, REQUIRES VAULT #
+EconomyEnabled: true
+# Charge for Sethome
+SetHomeCharge: true
+SetHomeCost: 25
+# Charge for home
+HomeCharge: false
+HomeCost: 0

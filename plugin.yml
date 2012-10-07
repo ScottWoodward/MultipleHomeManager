@@ -1,0 +1,19 @@
+name: Multiple Home Management
+main: com.gmail.scottmwoodward.multiplehomemanagement.MultipleHomeManagement
+version: 1.00
+
+commands:
+   home:
+      description: Teleports to the designated home.
+      usage: /home <Home Number>
+      permission: multihomes.home
+      permission-message: You do not have permission to use /home
+   sethome:
+      description: Sets the location of the designated home.
+      usage: /sethome <Home Number>
+      permission-message: You do not have permission to use /sethome
+   listhome:
+      description: Lists the available home teleports.
+      usage: /listhome
+      permission: multihomes.listhome
+      permission-message: You do not have permission to use /listhome
