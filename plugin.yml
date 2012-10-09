@@ -1,6 +1,6 @@
 name: MultipleHomeManager
 main: com.gmail.scottmwoodward.multiplehomemanager.MultipleHomeManager
-version: 1.01
+version: 1.1.0
 softdepend: [Vault]
 
 commands:
@@ -16,8 +16,13 @@ commands:
    homelist:
       description: Lists the available home teleports.
       usage: /homelist
-      permission: mhm.command.listhome
+      permission: mhm.command.homelist
       permission-message: You do not have permission to use /homelist
+   mhmadmin:
+      description: Admin command for MultipleHomeManager
+      usage: /mhmadmin
+      permission: mhm.command.mhmadmin
+      permission-message: You do not have permission to use /mhmadmin
       
 permissions: 
    mhm.command.home:
@@ -26,3 +31,17 @@ permissions:
       description: Gives access to /homelist
    mhm.command.sethome.tier<x>:
       description: Gives access to the x-th tier of home teleports (not previous tiers)
+   mhm.command.mhmadmin.*:
+      description: Gives access to the mhmadmin commands
+      children:
+         mhm.command.mhmadmin.unsethome: true
+         mhm.command.mhmadmin.listothers: true
+         mhm.command.mhmadmin: true
+   mhm.command.mhmadmin.deletehome:
+      description: Deletes selected player's specified home
+   mhm.command.mhmadmin:
+      description: Help command for MultipleHomeManager Admin commands.
+   mhm.command.mhmadmin.listothers:
+      description: Lists specified users homes
+      
+         

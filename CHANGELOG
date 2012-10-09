@@ -1,3 +1,17 @@
+Version 1.1.0
+-----------------
+- Added command /homelist to enable a user to view their currently set homes (permission node mhm.command.homelist)
+- Added command /mhmadmin to view admin command help (permission node mhm.command.mhmadmin)
+- Added command /mhmadmin list <player> to view another player's home list (permission node mhm.command.mhmadmin.listothers)
+- Added command /mhmadmin unsethome <player> <home number> to un-set the chosen player's specified home (permission node mhm.command.mhmadmin.unsethome)
+- Added permission node mhm.command.mhmadmin.* to grant mhm.command.mhmadmin.listothers, mym.command.mhmadmin.unsethome, and mhm.command.mhmadmin at once
+- Added a database converter to correct case sensitivity with player names (Auto runs on startup)
+
+Version 1.02
+-----------------
+- Rewrote permissions to be better inline with naming conventions
+- Sorted namespaces for better internal organization
+
 Version 1.01
 ------------
  - Altered onEnable() to only display Vault dependency missing warning if economy funcitons are enabled
