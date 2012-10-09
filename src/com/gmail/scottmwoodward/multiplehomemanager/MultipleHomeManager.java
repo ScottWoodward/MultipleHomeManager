@@ -9,6 +9,7 @@ import net.milkbowl.vault.economy.Economy;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.gmail.scottmwoodward.multiplehomemanager.handlers.CommandHandler;
 import com.gmail.scottmwoodward.multiplehomemanager.handlers.DBHandler;
 import com.gmail.scottmwoodward.multiplehomemanager.handlers.EconHandler;
 
@@ -40,7 +41,7 @@ public class MultipleHomeManager extends JavaPlugin{
 		delay = this.getConfig().getInt("TeleportDelay");
 		getCommand("home").setExecutor(handler);
 		getCommand("sethome").setExecutor(handler);
-		getCommand("listhome").setExecutor(handler);
+		getCommand("homelist").setExecutor(handler);
 		useEcon = this.getConfig().getBoolean("EconomyEnabled");
 		if(useEcon){
 			if(!setupEconomy()){

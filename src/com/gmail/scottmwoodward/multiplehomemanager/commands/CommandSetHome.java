@@ -47,7 +47,7 @@ public class CommandSetHome {
 				player.sendMessage("Home "+String.valueOf(homeNumber)+" set.");
 			}
 			else{
-				player.sendMessage("You do not have permission to set home number "+args[0]);
+				player.sendMessage("You do not have permission to set home "+args[0]);
 			}
 			return true;
 		}

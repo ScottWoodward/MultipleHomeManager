@@ -1,6 +1,7 @@
 name: MultipleHomeManager
 main: com.gmail.scottmwoodward.multiplehomemanager.MultipleHomeManager
 version: 1.01
+softdepend: [Vault]
 
 commands:
    home:
@@ -12,8 +13,16 @@ commands:
       description: Sets the location of the designated home.
       usage: /sethome <Home Number>
       permission-message: You do not have permission to use /sethome
-   listhome:
+   homelist:
       description: Lists the available home teleports.
-      usage: /listhome
+      usage: /homelist
       permission: mhm.command.listhome
-      permission-message: You do not have permission to use /listhome
+      permission-message: You do not have permission to use /homelist
+      
+permissions: 
+   mhm.command.home:
+      description: Gives access to /home <x>
+   mhm.command.listhome:
+      description: Gives access to /homelist
+   mhm.command.sethome.tier<x>:
+      description: Gives access to the x-th tier of home teleports (not previous tiers)

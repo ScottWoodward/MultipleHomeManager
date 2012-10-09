@@ -1,6 +1,7 @@
 package com.gmail.scottmwoodward.multiplehomemanager.handlers;
 
 import java.sql.ResultSet;
+import java.text.DecimalFormat;
 
 import com.gmail.scottmwoodward.multiplehomemanager.MultipleHomeManager;
 
@@ -62,26 +63,20 @@ public class DBHandler {
 		}
 	}
 	
-	public String[] listHomes(String playerName){
+	public String listHomes(String playerName){
 		String lookup = "SELECT * FROM homes WHERE playername='"+playerName+"'";
 		ResultSet r = sql.query(lookup);
+		String result = "";
 		try{
-			if(r.next()){
-				r.close();
-				String[] results = new String[0];
-				results[0] = "You have no set homes";
-				return results;
-			}
-			else{
-				r.close();
-				String[] results = new String[0];
-				results[0] = "You have no set homes";
-				return results;
-			}
+			while(r.next()){
+			   
+			    result+= "Home "+String.valueOf(r.getInt("homenumber"))+": ("+String.valueOf(roundTwoDecimals(r.getDouble("x")))+", "+String.valueOf(roundTwoDecimals(r.getDouble("y")))+", "+String.valueOf(roundTwoDecimals(r.getDouble("z")))+") in "+r.getString("world")+"\n";
+			            }
+			r.close();
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-		return null;
+		return result;
 	}
 	
 	public boolean rowExist(String player, int homeNumber){
@@ -143,6 +138,10 @@ public class DBHandler {
 		return "invalid";
 	}
 	
+	public double roundTwoDecimals(double d) {
+        DecimalFormat twoDForm = new DecimalFormat("#.##");
+    return Double.valueOf(twoDForm.format(d));
+	}	
 	
 	public void sqlClose(){
 		try{

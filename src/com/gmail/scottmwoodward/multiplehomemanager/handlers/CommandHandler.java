@@ -1,9 +1,10 @@
-package com.gmail.scottmwoodward.multiplehomemanager;
+package com.gmail.scottmwoodward.multiplehomemanager.handlers;
 
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
+import com.gmail.scottmwoodward.multiplehomemanager.MultipleHomeManager;
 import com.gmail.scottmwoodward.multiplehomemanager.commands.CommandHome;
 import com.gmail.scottmwoodward.multiplehomemanager.commands.CommandListHome;
 import com.gmail.scottmwoodward.multiplehomemanager.commands.CommandSetHome;
@@ -28,7 +29,7 @@ public class CommandHandler implements CommandExecutor{
 		else if(cmd.getName().equalsIgnoreCase("sethome")){
 			return sethomecommand.execute(sender, args);
 		}
-		else if(cmd.getName().equalsIgnoreCase("listhome")){
+		else if(cmd.getName().equalsIgnoreCase("homelist")){
 			return listhomecommand.execute(sender,args);
 		}
 		return false;
