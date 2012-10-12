@@ -1,7 +1,8 @@
 name: MultipleHomeManager
 main: com.gmail.scottmwoodward.multiplehomemanager.MultipleHomeManager
 version: 1.1.1
-softdepend: [Vault]
+softdepend: 
+    - Vault
 
 commands:
    home:
