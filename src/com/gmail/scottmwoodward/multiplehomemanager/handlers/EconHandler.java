@@ -13,14 +13,14 @@ public class EconHandler {
     }
 
     public boolean hasEnoughMoney(Player player, double cost){
-        if(plugin.econ.getBalance(player.getDisplayName())>=cost){
+        if(plugin.econ.getBalance(player.getName())>=cost){
             return true;
         }
         return false;
     }
 
     public String takePayment(Player player, double cost){
-        plugin.econ.withdrawPlayer(player.getDisplayName(), cost);
+        plugin.econ.withdrawPlayer(player.getName(), cost);
         if(cost != 1){
             return String.valueOf(cost)+" "+plugin.econ.currencyNamePlural()+" has been spent for the command: ";
         }

@@ -35,7 +35,7 @@ public class CommandHome {
                         }
                     }
                 }
-                if(plugin.getPending().contains(player.getDisplayName())){
+                if(plugin.getPending().contains(player.getName())){
                     player.sendMessage("You already have a pending teleport");
                     return true;
                 }

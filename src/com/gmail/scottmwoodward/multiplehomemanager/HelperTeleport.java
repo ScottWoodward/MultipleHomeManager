@@ -21,11 +21,11 @@ public class HelperTeleport {
                 player.sendMessage("Command 'Home' Failed");
             }
             World world = plugin.getServer().getWorld(plugin.getDBHandler().getWorld(player.getName(), homeNumber));
-            plugin.getPending().add(player.getDisplayName());
+            plugin.getPending().add(player.getName());
             plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new RunnableTeleport(player, world, x, y, z, plugin), convertDelay());
         }
         else{
-            player.sendMessage("You have not set Home number "+String.valueOf(homeNumber));
+            player.sendMessage("You have not set home "+String.valueOf(homeNumber));
         }
 
     }

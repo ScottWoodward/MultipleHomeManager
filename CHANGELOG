@@ -1,8 +1,13 @@
+Version 1.1.2
+-------------
+- Major bug fix concerning player names on servers running prefixes. 
+
 Version 1.1.1
------------------
+-------------
 - Added Vault as a soft dependency, to correct loading issues. 
+
 Version 1.1.0
------------------
+-------------
 - Added command /homelist to enable a user to view their currently set homes (permission node mhm.command.homelist)
 - Added command /mhmadmin to view admin command help (permission node mhm.command.mhmadmin)
 - Added command /mhmadmin list <player> to view another player's home list (permission node mhm.command.mhmadmin.listothers)
@@ -11,7 +16,7 @@ Version 1.1.0
 - Added a database converter to correct case sensitivity with player names (Auto runs on startup)
 
 Version 1.02
------------------
+------------
 - Rewrote permissions to be better inline with naming conventions
 - Sorted namespaces for better internal organization
 
