@@ -1,3 +1,6 @@
+Version 1.1.1
+-----------------
+- Added Vault as a soft dependency, to correct loading issues. 
 Version 1.1.0
 -----------------
 - Added command /homelist to enable a user to view their currently set homes (permission node mhm.command.homelist)

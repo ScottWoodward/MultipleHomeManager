@@ -11,7 +11,6 @@ import lib.PatPeter.SQLibrary.SQLite;
 
 public class DBHandler {
     private SQLite sql;
-
     private MultipleHomeManager plugin;
 
     public DBHandler(MultipleHomeManager plugin){
