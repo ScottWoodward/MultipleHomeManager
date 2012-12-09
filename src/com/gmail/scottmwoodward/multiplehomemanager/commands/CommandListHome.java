@@ -15,7 +15,7 @@ public class CommandListHome {
 
     public boolean execute(CommandSender sender, String[] args){
         if(sender instanceof Player){
-            if(args.length == 1){
+            if(args.length == 0){
                 Player player = (Player) sender;
                 player.sendMessage("Your homes are:");
                 player.sendMessage(plugin.getDBHandler().listHomes(player.getName()).split("\n"));
